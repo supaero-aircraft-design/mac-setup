@@ -8,8 +8,7 @@ print_status() {
 }
 
 # Update macOS and install Xcode Command Line Tools
-print_status "Updating macOS and installing Xcode Command Line Tools..."
-sudo softwareupdate -ia --verbose
+print_status "Installing Xcode Command Line Tools..."
 xcode-select --install
 
 # Install Homebrew
