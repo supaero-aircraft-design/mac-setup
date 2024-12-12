@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Update macOS and install Xcode Command Line Tools
-echo "Updating macOS and installing Xcode Command Line Tools..."
-sudo softwareupdate -ia --verbose
-xcode-select --install
-
-# Install Homebrew
-echo "Installing Homebrew..."
-if ! command -
-
-Here's the complete setup script based on your specifications, along with typical configurations:
-
-### mac-setup.sh
-
-```bash
-#!/bin/bash
-
 # Function to print status messages
 print_status() {
   echo "==============================="
@@ -51,7 +35,7 @@ print_status "Installing and configuring Oh My Zsh..."
 brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Set Zsh as default shell
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 
 # Add Powerlevel10k theme (popular for Oh My Zsh)
 brew install romkatv/powerlevel10k/powerlevel10k
@@ -60,7 +44,7 @@ echo 'source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zs
 # Install Bash and enable tab completion
 print_status "Installing Bash and tab completion..."
 brew install bash bash-completion
-echo "[[ -r \"$(brew --prefix)/etc/profile.d/bash_completion.sh\" ]] && . \"$(brew --prefix)/etc/profile.d/bash_completion.sh\"" >>~/.bash_profile
+echo "[[ -r \"\$(brew --prefix)/etc/profile.d/bash_completion.sh\" ]] && . \"\$(brew --prefix)/etc/profile.d/bash_completion.sh\"" >>~/.bash_profile
 
 # Install developer tools
 print_status "Installing developer tools..."
@@ -105,8 +89,8 @@ Setup is complete! Here are some post-installation steps:
    Recommended plugins: git, zsh-autosuggestions, zsh-syntax-highlighting.
    Install with:
      brew install zsh-autosuggestions zsh-syntax-highlighting
-     echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-     echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+     echo "source \$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+     echo "source \$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 3. Set up Powerlevel10k by running 'p10k configure' in the terminal.
 4. Configure Docker and log in if needed.
 
